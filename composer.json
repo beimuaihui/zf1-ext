@@ -1,0 +1,29 @@
+{
+    "name": "beimuaihui/zf1-ext",
+    "description": "Collection of classes/components which extend or supplement Zend Framework 1.x",
+    "type": "library",
+    "keywords": [
+        "zend",
+        "Zend Framework",
+        "zf1"
+    ],
+    "license": "GPL-3",
+    "authors": [
+    {
+        "name": "beimuaihui",
+        "email": "beimuaihui@gmail.com",
+        "homepage": "http://blog.csdn.net/beimuaihui"
+    }
+    ],
+    "require": {
+        "php": ">=5.2.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "Modern": "library/"
+        }
+    },
+    "include-path": [
+        "library/"
+    ]
+}
