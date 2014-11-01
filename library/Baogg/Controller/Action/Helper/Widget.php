@@ -22,11 +22,11 @@ class Baogg_Controller_Action_Helper_Widget extends Zend_Controller_Action_Helpe
 				'force_compile' => (BAOGG_DEBUG?1:0), 
 				'caching' => (BAOGG_DEBUG?0:1),   //1
 	            'cache_lifetime' => 3600, 
-	            //'SMARTY_DIR' => BAOGG_ROOT . 'library/smarty/', 
+	            //'SMARTY_DIR' => BAOGG_ROOT . 'vendor/smarty/smarty/libs/', 
 	            'template_dir' => BAOGG_ROOT . 'views/widgets', 
 	            'compile_dir' => BAOGG_ROOT . 'views/widgets_c', 
 	            'cache_dir' =>BAOGG_ROOT. '/views/widgets_cache', 
-	            'plugins_dir' => array(BAOGG_ROOT . 'library/smarty/plugins')
+	            'plugins_dir' => array(BAOGG_ROOT . 'vendor/smarty/smarty/libs/plugins')
 			);
 	
 			

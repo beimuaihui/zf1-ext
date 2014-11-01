@@ -8,7 +8,7 @@
  * $Id: Smarty.php 283 2011-08-09 13:06:31Z beimuaihui@gmail.com $
  */
 //require_once 'Zend/View/Abstract.php';
-//require_once BAOGG_ROOT. 'library/smarty/Smarty.class.php';
+//require_once BAOGG_ROOT. 'vendor/smarty/smarty/libs/Smarty.class.php';
 
 class Baogg_View_Smarty  implements Zend_View_Interface
 {
