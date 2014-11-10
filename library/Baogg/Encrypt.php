@@ -2,7 +2,7 @@
 class Baogg_Encrypt
 {
 
-	public static $key=__FILE__;
+	public static $key= 'zf1-ext/library/Baogg/Encrypt.php';
 
 
 	public static function encrypt($plaintext,$key = ''){
