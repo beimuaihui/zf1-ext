@@ -20,12 +20,13 @@ class Baogg_Controller_Action_Helper_Widget extends Zend_Controller_Action_Helpe
 				'right_delimiter' => "}", 
 				'compile_check' => (BAOGG_DEBUG?1:0), 
 				'force_compile' => (BAOGG_DEBUG?1:0), 
-				'caching' => (BAOGG_DEBUG?0:1),   //1
-	            'cache_lifetime' => 3600, 
+				'compile_locking' => false,
+				'caching' => BAOGG_READONLY?0 : (BAOGG_DEBUG?0:1),   //
+	            'cache_lifetime' => 20, 
 	            //'SMARTY_DIR' => BAOGG_ROOT . 'vendor/smarty/smarty/libs/', 
 	            'template_dir' => BAOGG_ROOT . 'views/widgets', 
-	            'compile_dir' => BAOGG_ROOT . 'views/widgets_c', 
-	            'cache_dir' =>BAOGG_ROOT. '/views/widgets_cache', 
+	            'compile_dir' => BAOGG_WIDGETS_COMPILE_DIR,  
+	              'cache_dir' =>BAOGG_WIDGETS_CACHE_DIR,  
 	            'plugins_dir' => array(BAOGG_ROOT . 'vendor/smarty/smarty/libs/plugins')
 			);
 	

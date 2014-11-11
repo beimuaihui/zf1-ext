@@ -63,22 +63,26 @@ class Baogg_Db_Table  extends Zend_Db_Table_Abstract {
 			$this->myPrimary=$this->_primary;	
 		}
 
-		// First, set up the Cache
-		$frontendOptions = array(
-		    'automatic_serialization' => true
-		    );
-		$dir_cache =  BAOGG_UPLOAD_DIR.'cache/';
-		is_dir($dir_cache) or Baogg_File::mkdir($dir_cache);
-		$backendOptions  = array(
-		    'cache_dir'                => $dir_cache
-		    );
-		 
-		$cache = Zend_Cache::factory('Core',
-		                             'File',
-		                             $frontendOptions,
-		                             $backendOptions);
+		if(! BAOGG_DEBUG &&    ! BAOGG_READONLY){
+			// First, set up the Cache
+			$frontendOptions = array(
+			    'automatic_serialization' => true
+			    );
+			$dir_cache =  BAOGG_UPLOAD_DIR.'cache/';
+			is_dir($dir_cache) or Baogg_File::mkdir($dir_cache);
+			$backendOptions  = array(
+			    'cache_dir'                => $dir_cache
+			    );
+			 
+			$cache = Zend_Cache::factory('Core',
+			                             'File',
+			                             $frontendOptions,
+			                             $backendOptions);
 
-		parent::__construct(array('metadataCache' => $cache));
+			parent::__construct(array('metadataCache' => $cache));
+		}else{
+			parent::__construct();
+		}
 	}
 
 	public function changeTableName($new_name){
